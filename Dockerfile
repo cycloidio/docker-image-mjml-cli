@@ -7,6 +7,7 @@ LABEL "io.cycloid"="Cycloid" \
       "repository.github"="https://github.com/cycloidio/docker-image-mjml-cli" \
       "maintainer"="contact@cycloid.io"
 
-RUN npm install -g mjml@4.2.0
+ARG MJML_VER
+RUN npm install -g mjml-cli@$MJML_VER mjml-core@$MJML_VER mjml@$MJML_VER
 
 ENTRYPOINT ["mjml"]
