@@ -9,7 +9,7 @@ help: ## Show this help
 
 .PHONY: build
 build: ## Build the docker image
-	@docker build -t cycloid/mjml-cli:$(VERSION) .
+	@docker build --build-arg MJML_VER=$(VERSION) -t cycloid/mjml-cli:$(VERSION) .
 
 
 .PHONY: push
